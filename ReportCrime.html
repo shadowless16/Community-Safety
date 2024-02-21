@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Crime</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff56;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .container-bg {
+            background-image: url('img/black\ community.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        #map {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-bg">
+        <div class="container">
+            <h2>Report Crime</h2>
+            
+            <form>
+                <div class="form-group">
+                    <label for="crimeType">Type of Crime</label>
+                    <select class="form-control" id="crimeType" required>
+                        <option value="" selected disabled>Select type of crime</option>
+                        <option value="Theft">Theft</option>
+                        <option value="Assault">Assault</option>
+                        <option value="Burglary">Burglary</option>
+                        <option value="Robbery">Robbery</option>
+                        <option value="Vandalism">Vandalism</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="crimeDescription">Description</label>
+                    <textarea class="form-control" id="crimeDescription" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location" required>
+                </div>
+                <!-- Image Upload -->
+                <div class="form-group">
+                    <label for="crimeImage">Upload Image</label>
+                    <input type="file" class="form-control-file" id="crimeImage">
+                </div>
+                <!-- Map Frame -->
+                <div id="map"></div>
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- Google Maps API (Replace YOUR_API_KEY with your actual API key) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        // Initialize and display the map
+        function initMap() {
+            // Define the map options
+            var options = {
+                center: { lat: 0, lng: 0 },
+                zoom: 15
+            };
+            // Create the map
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            // Add a marker at the center of the map
+            var marker = new google.maps.Marker({
+                position: { lat: 0, lng: 0 },
+                map: map,
+                draggable: true // Allow marker to be dragged to adjust the location
+            });
+
+            // Update marker position when it's dragged
+            google.maps.event.addListener(marker, 'dragend', function(event) {
+                document.getElementById('location').value = event.latLng.lat() + ', ' + event.latLng.lng();
+            });
+        }
+    </script>
+</body>
+</html>

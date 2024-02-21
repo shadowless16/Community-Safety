@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilian Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff2c;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .container-bg {
+            background-image: url('img/black\ community.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-bg">
+        <div class="container">
+            <h2>Welcome to Your Dashboard, [Civilians' Name]!</h2>
+            
+            <!-- Crime Reporting Section -->
+            <div class="card">
+                <div class="card-header">
+                    Report Crime
+                </div>
+                <div class="card-body">
+                    <p>Report any suspicious activity or crime you've witnessed in your area.</p>
+                    <a href="ReportCrime.html" class="btn btn-primary">Report Now</a>
+                </div>
+            </div>
+    
+            <!-- Suspected criminal -->
+    
+            <div class="card">
+                <div class="card-header">
+                    Report Suspected Criminal
+                </div>
+                <div class="card-body">
+                    <p>Report any susoected criminal you've witnessed in your area.</p>
+                    <a href="ReportCriminal.html" class="btn btn-primary">Report Now</a>
+                </div>
+            </div>
+    
+            <!-- Crime History Section -->
+            <div class="card">
+                <div class="card-header">
+                    Crime History
+                </div>
+                <div class="card-body">
+                    <p>View the history of crimes reported in your area.</p>
+                    <a href="#" class="btn btn-primary">View History</a>
+                </div>
+            </div>
+    
+            <!-- Profile Section -->
+            <div class="card">
+                <div class="card-header">
+                    Profile
+                </div>
+                <div class="card-body">
+                    <p>View and update your profile information.</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+    
+            <!-- Logout Button -->
+            <a href="index.html" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

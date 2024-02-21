@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Law Enforcement Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff59;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-bg {
+            background-image: url('img/black\ community.jpeg');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #f2f2f234;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #map {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-bg">
+        <div class="container">
+            <h2>Law Enforcement Dashboard</h2>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Reported Crimes</h5>
+                    <p class="card-text">View and manage reported crimes in the area.</p>
+                    <a href="#" class="btn btn-primary">View Reported Crimes</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Suspected Criminals</h5>
+                    <p class="card-text">Access information about suspected criminals and ongoing investigations.</p>
+                    <a href="#" class="btn btn-primary">View Suspected Criminals</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Crime Analysis</h5>
+                    <p class="card-text">Analyze crime trends and patterns in the area.</p>
+                    <a href="#" class="btn btn-primary">View Crime Analysis</a>
+                </div>
+            </div>
+
+            <h5>Map Section</h5>
+            <div id="map"></div>
+        </div>
+    </div>
+    <!-- Google Maps API (Replace YOUR_API_KEY with your actual API key) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        // Initialize and display the map
+        function initMap() {
+            // Define the map options
+            var options = {
+                center: { lat: 0, lng: 0 },
+                zoom: 10
+            };
+            // Create the map
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            // Add sample marker for demonstration purposes
+            var marker = new google.maps.Marker({
+                position: { lat: 0, lng: 0 },
+                map: map,
+                title: 'Sample Marker'
+            });
+        }
+    </script>
+</body>
+</html>

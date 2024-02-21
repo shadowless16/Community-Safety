@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Services Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="containerNav">
+            <div class="logo">
+                <a href="index.html"><h2>Community Safety</h2></a>
+            </div>
+            <nav class="navigation">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+                <div class="toggle-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+<!-- Main Content -->
+<div class="hero">
+    <div class="container">
+        <div class="welcome-message">
+            <h4>Welcome to Our Community Safety Platform!</h4>
+            <p>We are dedicated to promoting community safety and security. Our platform allows you to report any crime or suspicious activity that you witness in your area. Together, we can create a safer environment for everyone.</p>
+            <p>Get involved today by registering as a civilian or a police officer below.</p>
+        </div>
+        <div class="registration-cards">
+            <div class="card">
+                <h5>Register as a Civilian</h5>
+                <p>Register as a civilian to report crime scenes.</p>
+                <a href="CivilanRegistration.html" class="btn">Register</a>
+            </div>
+            <div class="card">
+                <h5>Register as a Police Officer</h5>
+                <p>Register as a police officer to access additional features.</p>
+                <a href="PoliceRegistration.html" class="btn">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const toggleButton = document.querySelector('.toggle-button');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
