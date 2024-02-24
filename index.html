@@ -6,16 +6,26 @@
     <title>Comsafeti</title>
     <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap.min.css">
     <style>
-        .containerNav {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
         }
 
-        .header {
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar styles */
+        .navbar {
             background-color: #333;
             color: #fff;
             padding: 15px 20px;
@@ -25,26 +35,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            animation: slideDown 1s ease-out; 
         }
 
-        .logo {
-            display: flex; /* Change display to flex  */
-            align-items: center; /*Align items vertically  */
-        }
-
-        nav img {
+        .navbar-brand img {
             height: 50px;
             width: 50px;
-            margin-right: 10px;  /*Add margin for spacing between logo and text  */
+            margin-right: 10px;
         }
 
-        .navigation {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+        .navbar-brand span {
+            font-size: 1.5rem;
         }
 
-        .nav-links {
+        .navbar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
@@ -52,68 +56,29 @@
             align-items: center;
         }
 
-        .nav-links li {
+        .navbar-nav li {
             margin-right: 20px;
         }
 
-
-
-        .nav-links li a {
+        .navbar-nav li a {
             color: #fff;
             text-decoration: none;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        .toggle-button {
-            display: none;
-            cursor: pointer;
-        }
-
-        .toggle-button span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin-bottom: 5px;
-        }
-
-
-        @media (max-width: 768px) {
-            .toggle-button {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                width: 100%;
-                text-align: center;
-            }
-
-            .nav-links.active {
-                display: block;
-            }
-
-            .nav-links li {
-                display: block;
-                margin-bottom: 15px;
-            }
-        }
-
-        /* Hero Section Styles */
+        /* Hero Section styles */
         .hero {
             background-image: url('img/black\ community.jpeg');
             background-size: cover;
             background-position: center;
             color: #fff;
             padding: 100px 0;
+            height: 100vh;
+
         }
 
         .welcome-message {
             margin-bottom: 40px;
-            background-color: #007bff42; 
+            background-color: #007bffea; 
             padding: 20px;
             border-radius: 5px;
         }
@@ -122,7 +87,7 @@
             display: flex;
             justify-content: space-between;
             gap: 20px;
-            flex-wrap: wrap; /* Cards stack on mobile screens */
+            flex-wrap: wrap; 
         }
 
         .card {
@@ -131,10 +96,24 @@
             padding: 30px;
             border-radius: 5px;
             text-align: center;
-            width: calc(30% - 5px);
+            width: calc(100% - 20px); 
+            margin-bottom: 20px; 
             box-sizing: border-box;
             transition: transform 0.3s ease-in-out;
         }
+
+        @media (min-width: 576px) { 
+            .card {
+                width: calc(50% - 20px); 
+            }
+        }
+
+        @media (min-width: 768px) { /* Adjust based on your desired breakpoint */
+            .card {
+                width: calc(33.33% - 20px);
+            }
+        }
+
 
         .card:hover {
             transform: scale(1.1);
@@ -161,6 +140,53 @@
         .card .btn:hover {
             background-color: #f0f0f0;
         }
+
+        .typewriter, .typewriter-p1, .typewriter-p2 {
+        overflow: hidden;
+        border-right: .15em solid orange; /* The typewriter cursor */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em; /* Adjust as needed */
+    }
+
+    .typewriter {
+        animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+    }
+
+    .typewriter-p1 {
+        animation: typing-p1 4s steps(30, end);
+    }
+
+    .typewriter-p2 {
+        animation: typing-p2 3s steps(30, end) 4s; /* Start after 4s delay */
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    @keyframes typing-p1 {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    @keyframes typing-p2 {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange }
+    }
+
+        /* Nav bar slide */
+        @keyframes slideDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -169,11 +195,11 @@
             <img src="img/fav.png" alt="Your Logo">
             <span>Comsafeti</span>
         </a>
-    
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
@@ -182,38 +208,66 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CivilanLogin.html">Civilan Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="LawEnforcementLogin.html">LawEnforcement Sign In</a>
+                </li>
             </ul>
         </div>
     </nav>
-    
 
-<!-- Main Content -->
-<div class="hero">
-    <div class="container">
-        <div class="welcome-message">
-            <h4>Welcome to Comsafeti !</h4>
-            <p>We are dedicated to promoting community safety and security. Our platform allows you to report any crime or suspicious activity that you witness in your area. Together, we can create a safer environment for everyone.</p>
-            <p>Get involved today by registering as a civilian or a police officer below.</p>
-        </div>
-        <div class="registration-cards">
-            <div class="card">
-                <h5>Register as a Civilian</h5>
-                <p>Register as a civilian to report crime scenes.</p>
-                <a href="CivilanRegistration.html" class="btn">Register</a>
+    <!-- Main Content -->
+    <div class="hero">
+        <div class="container">
+            <!-- Typewriter Welcome Message -->
+            <div class="welcome-message">
+                <h4 class="typewriter">Welcome to <span class="dynamic-word">community safety</span>!</h4>
+                <p class="typewriter-p1">We are dedicated to promoting community safety and security. Our platform allows you to report any crime or suspicious activity that you witness in your area. Together, we can create a safer environment for everyone.</p>
+                <p class="typewriter-p2">Get involved today by registering as a civilian or a police officer below.</p>
             </div>
-            <div class="card">
-                <h5>Register as a Law Enforcement Agent</h5>
-                <p>Register as a police officer to access additional features.</p>
-                <a href="LawEnforcementSignUp.html" class="btn">Register</a>
-            </div>
-            <div class="card">
-                <h5>Anonymous Reporting</h5>
-                <p>Register without having to revele your true identity</p>
-                <a href="PoliceRegistration.html" class="btn">Register</a>
+            <div class="registration-cards">
+                <!-- Your registration cards -->
+                <div class="card">
+                    <h5>Register as a Civilian</h5>
+                    <p>Register as a civilian to report crime scenes.</p>
+                    <a href="CivilanRegistration.html" class="btn">Register</a>
+                </div>
+                <div class="card">
+                    <h5>Register as a Law Enforcement Agent</h5>
+                    <p>Register as a Law Enforcement Agent to access additional features.</p>
+                    <a href="LawEnforcementSignUp.html" class="btn">Register</a>
+                </div>
+                <div class="card">
+                    <h5>Anonymous Reporting</h5>
+                    <p>Register without having to reveal your true identity.</p>
+                    <a href="PoliceRegistration.html" class="btn">Register</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+    <script>
+        // Dynamic word changing
+        const dynamicWord = document.querySelector('.dynamic-word');
+        const words = ['community safety', 'security', 'crime prevention'];
+        let index = 0;
+    
+        function changeWord() {
+            dynamicWord.textContent = words[index];
+            index = (index + 1) % words.length;
+        }
+    
+        setInterval(changeWord, 1500);
+    
+        // Navigation toggle functionality
+        const toggleButton = document.querySelector('.toggle-button');
+        const navLinks = document.querySelector('.nav-links');
+    
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
