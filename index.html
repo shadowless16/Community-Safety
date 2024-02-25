@@ -72,13 +72,13 @@
             background-position: center;
             color: #fff;
             padding: 100px 0;
-            height: 100vh;
+            /* height: 100vh; */
 
         }
 
         .welcome-message {
             margin-bottom: 40px;
-            background-color: #007bffea; 
+            background-color: #007bff7e; 
             padding: 20px;
             border-radius: 5px;
         }
@@ -91,7 +91,7 @@
         }
 
         .card {
-            background-color: #007bff;
+            background-color: #007bff46;
             color: #fff;
             padding: 30px;
             border-radius: 5px;
@@ -101,6 +101,7 @@
             box-sizing: border-box;
             transition: transform 0.3s ease-in-out;
         }
+
 
         @media (min-width: 576px) { 
             .card {
@@ -117,6 +118,7 @@
 
         .card:hover {
             transform: scale(1.1);
+            background-color: #007bff;
         }
 
         .card h5 {
@@ -251,7 +253,7 @@
     <script>
         // Dynamic word changing
         const dynamicWord = document.querySelector('.dynamic-word');
-        const words = ['community safety', 'security', 'crime prevention'];
+        const words = ['ComSafeti', 'security', 'crime prevention'];
         let index = 0;
     
         function changeWord() {
