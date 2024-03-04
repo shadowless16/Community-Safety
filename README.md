@@ -1,27 +1,10 @@
-The readme file you provided outlines the features of the Community Safety web app:
+# Community-Safety
+Website for crime report in the community
 
-## Community-Safety
+v1.0 Fetures
+Civilan ---->   Report Crimes, Report Crimianls, View Profile
+Law Enforment Agent -----> View Reported Crimes, View Reported Criminals, Map section
 
-Web app for crime reporting in the community.
-
-### v1.0 Features
-
-#### Civilian
-- Report Crimes
-- Report Criminals
-- View Profile
-
-#### Law Enforcement Agent
-- View Reported Crimes
-- View Reported Criminals
-- Map Section
-
-### Upcoming Features for v2.0
-
-#### Civilian
-- Viewing crime rate in the area
-
-#### Law Enforcement Agent
-- Crime Analysis
-
-This provides a clear overview of the current features available in version 1.0 and the planned features for version 2.0 of the Community Safety web app.
+Upcomming Features for v2.0
+Civilan ----> Veiwing crime in area
+Law Enforment Agent -----> Crime Analysis
