@@ -1,43 +1,26 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Ak David</title>
   <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="..." crossorigin="anonymous" />
+
+
   <style>
-    body {
-      background-color: #f8f9fa;
-      font-family: 'Arial', sans-serif;
-    }
-    .about-section {
-      padding: 50px 0;
-      background-color: #007bff;
-      color: #fff;
-      text-align: center;
-    }
-    .container-bg {
-      background-image: url('img/black\ community.jpeg');
-      background-size: cover;
-      background-position: center;
-      /* height: 50vh; */
-      /* display: flex; */
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .team-section {
-      padding: 50px 0;
-      text-align: center;
-      background-color: #f8f9fa;
-    }
+    /* Your existing CSS styles */
+
     .team-member {
       margin-bottom: 30px;
     }
+
     .team-member img {
       width: 150px;
       height: 150px;
@@ -45,140 +28,374 @@
       border: 5px solid #007bff;
       transition: transform 0.3s ease-in-out;
     }
+
     .team-member img:hover {
       transform: scale(1.1);
     }
+
     .team-member h3 {
       margin-top: 20px;
       color: #007bff;
     }
+
     .team-member p {
       color: #666;
     }
+
     h1 {
       color: white;
       font-size: 3rem;
       margin-bottom: 20px;
     }
+
     h4 {
       color: #007bff;
       font-size: 1.5rem;
       margin-top: 30px;
     }
+
     p {
       font-size: 1.1rem;
       line-height: 1.6;
     }
-    .feature-list {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 20px;
-    }
-    .feature-list li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-      font-size: 1.1rem;
-    }
-    .feature-list li::before {
-      content: '\2022';
-      position: absolute;
-      left: 0;
-      color: #007bff;
-      font-weight: bold;
-    }
-    .feature-list li:last-child {
-      margin-bottom: 0;
-    }
-    .join-us-button {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 15%;
-      transition: background-color 0.3s ease;
-      display: flex;
-     justify-content: space-evenly;
-    }
-    .join-us-button:hover {
-      background-color: #0056b3;
-    }
-    .team-section h2,h4 {
-      margin-bottom: 40px;
-      color: #007bff;
-      font-size: 2.5rem;
+
+
+
+    /* Hide elements by default */
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="container">
-    <div class="container-bg">
-      <div>
-        <h1>About Us</h1>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/fav.png" alt="Your Logo">
+      <span>Comsafeti</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="CivilanLogin.html">Civilan Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="LawEnforcementLogin.html">LawEnforcement Sign In</a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <h3>Welcome to Comsafeti , a community-driven crime reporting platform dedicated to enhancing safety and security in our neighborhoods.</h3>
-        
-    <h4>Our Mission</h4>
-    <p>At Comsafeti, our mission is to empower citizens and law enforcement agencies by providing a reliable platform for reporting and addressing criminal activities. We believe in fostering collaboration between community members and law enforcement to create safer environments for everyone.</p>
-
-    <h4>Our Vision</h4>
-    <p>We envision a world where every community member feels safe and empowered to report crime without fear, leading to swift and effective responses from law enforcement agencies.</p>
-
-    <h4>What We Offer</h4>
-    <ul class="feature-list">
-      <li>Citizen Reporting: Citizens can easily report crimes directly from their devices, contributing valuable information to help combat criminal activities in their communities.</li>
-      <li>Anonymous Reporting: We understand that some individuals may be hesitant to report crimes due to safety concerns. That's why we offer an anonymous reporting feature, allowing users to report incidents while protecting their privacy.</li>
-      <li>Law Enforcement Integration: Our platform provides law enforcement agencies with access to reported crimes, enabling them to efficiently manage and respond to incidents. Law enforcement personnel can update the status of reports, coordinate efforts, and access additional resources as needed.</li>
-    </ul>
-
-    <h4>Our Team</h4>
-    <p>Meet the dedicated team behind Comsafeti, committed to building innovative solutions to address community safety challenges.</p>
-
-    <div class="team-section">
-      <h2>Meet Our Team</h2>
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="heading_container heading_center">
+        <h2>
+          About <span>Us</span>
+        </h2>
+      </div>
       <div class="row">
-        <div class="col-md-4">
-          <div class="team-member">
-            <img src="img/chio.jpg" alt="Ak David">
-            <h3>Chioma Zara Nnadi</h3>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="img/black community.jpeg" alt="">
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="team-member">
-            <img src="img/pic3.jpg" alt="Sarah Johnson">
-            <h3>Egbedokun Sharon</h3>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="team-member">
-            <img src="img/Inumidun .jpg" alt="Michael Smith">
-            <h3>Inumidun Owoseni</h3>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h3>
+              Welcome To Comsafeti
+            </h3>
+            <p>
+              Welcome to Comsafeti, a community-driven crime reporting platform dedicated to enhancing safety and
+              security in our neighborhoods.
+            </p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <h4>Get Involved</h4>
-    <p>Join us in our mission to create safer communities. Whether you're a concerned citizen, a law enforcement agency, or a community advocate, there are various ways to get involved:</p>
-    <ul class="feature-list">
-      <li>Register: Sign up as a user to report crimes, access resources, and stay informed about safety initiatives.</li>
-      <li>Spread the Word: Help us raise awareness by sharing our platform with your friends, family, and community networks.</li>
-      <li>Collaborate: If you represent a law enforcement agency or community organization, reach out to explore potential partnerships and collaboration opportunities.</li>
-    </ul>
+  <section class="mission layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          <span>Our</span> Mission
+        </h2>
+      </div>
+      <div class="mission_container">
+        <div class="box">
+          <div class="team-member img">
+            <img src="img/missom.jpeg" alt="">
+          </div>
+          <div class="detail-box">
+            <p>
+              At Comsafeti, our mission is to empower citizens and law enforcement agencies by providing a reliable
+              platform for reporting and addressing criminal activities. We believe in fostering collaboration between
+              community members and law enforcement to create safer environments for everyone.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="team-member img">
+            <img src="img/vision.jpeg" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Our Vision
+            </h5>
+            <p>
+              We envision a world where every community member feels safe and empowered to report crime without fear,
+              leading to swift and effective responses from law enforcement agencies.
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="team-member img">
+            <img src="img/WhatWeOffer.jpeg" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              What We Offer
+            </h5>
+            <p>
+              <li>Citizen Reporting: Citizens can easily report crimes directly from their devices, contributing
+                valuable information to help combat criminal activities in their communities.</li>
+              <li>Anonymous Reporting: We understand that some individuals may be hesitant to report crimes due to
+                safety concerns. That's why we offer an anonymous reporting feature, allowing users to report incidents
+                while protecting their privacy.</li>
+              <li>Law Enforcement Integration: Our platform provides law enforcement agencies with access to reported
+                crimes, enabling them to efficiently manage and respond to incidents. Law enforcement personnel can
+                update the status of reports, coordinate efforts, and access additional resources as needed.</li>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <div class="join-us-button">Join Us</div>
+  <section class="team_section layout_padding" id="team">
+    <div class="container-fluid">
+        <div class="heading_container heading_center">
+            <h2 class="">
+                <span>Our Team</span>
+            </h2>
+        </div>
 
-    <h4>Contact Us</h4>
-    <p>Have questions, suggestions, or feedback? We'd love to hear from you! Feel free to reach out to our team at <i>imperialightscollege@gmail.com</i> .</p>
-  </div>
+        <div class="team_container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-12"> <!-- Adjust the column widths for different screen sizes -->
+                    <div class="box">
+                        <div class="team-member img">
+                            <img src="img/chio.jpg" class="img1" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>Chioma Zara Nnadi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                        <div class="team-member img">
+                            <img src="img/Inumidun .jpg" class="img1" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>Inumidun Owoseni</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="box">
+                        <div class="team-member img">
+                            <img src="img/pic3.jpg" class="img1" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>Egbedokun Sharon</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
   
+
+  <section class="GetInvolved_section layout_padding">
+    <div class="GetInvolved_section">
+      <div class="container ">
+        <div class="heading_container heading_center">
+          <h2>
+            Get <span>Involved</span>
+          </h2>
+          <p>
+            Join us in our mission to create safer communities. Whether you're a concerned citizen, a law enforcement
+            agency, or a community advocate, there are various ways to get involved:
+          </p>
+
+        </div>
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="img/register-icon.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Register
+                </h5>
+                <p>
+                  Sign up as a user to report crimes, access resources, and stay informed about safety initiatives.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box">
+              <div class="img-box">
+                <img src="img/spread-a-word-icon-png.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Spread the Word
+                </h5>
+                <p>
+                  Help us raise awareness by sharing our platform with your friends, family, and community networks.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box">
+              <div class="img-box">
+                <img src="img/COLLABORATE.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Collaborate
+                </h5>
+                <p>
+                  If you represent a law enforcement agency or community organization, reach out to explore potential
+                  partnerships and collaboration opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  21 Rd, Idimu, Lagos 102213, Lagos
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call 0803 324 3359
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  info@imperiallightscollege.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              Comsafeti is a community-driven crime reporting platform dedicated to enhancing safety and security in neighborhoods. 
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="index.html">
+                Home
+              </a>
+              <a class="" href="about.html">
+                About
+              </a>
+              <a class="" href="CivilanLogin.html">
+                Civilan Sign In
+              </a>
+              <a class="" href="LawEnforcementLogin.html">
+                LawEnforcement Sign In
+              </a>
+              <a class="" href="#team">
+                Team
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+    <section class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="index.html">Comsafeti</a>
+        </p>
+      </div>
+    </section>
+  
+    <!-- jQery
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+     popper js -
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script> -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

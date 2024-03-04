@@ -144,45 +144,53 @@
         }
 
         .typewriter, .typewriter-p1, .typewriter-p2 {
-        overflow: hidden;
-        border-right: .15em solid orange; /* The typewriter cursor */
-        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-        letter-spacing: .15em; /* Adjust as needed */
-    }
+            overflow: hidden;
+            border-right: .15em solid orange; /* The typewriter cursor */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            opacity: 0; /* Initially hidden */
+        }
 
-    .typewriter {
-        animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
-    }
+        .typewriter {
+            animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+            animation-delay: 1.5s; /* Delay for the typewriter effect */
+        }
 
-    .typewriter-p1 {
-        animation: typing-p1 4s steps(30, end);
-    }
+        .typewriter-p1 {
+            animation: typing-p1 4s steps(30, end);
+            animation-delay: 3s; /* Delay for the first paragraph */
+        }
 
-    .typewriter-p2 {
-        animation: typing-p2 3s steps(30, end) 4s; /* Start after 4s delay */
-    }
+        .typewriter-p2 {
+            animation: typing-p2 3s steps(30, end) 7s; /* Delay for the second paragraph */
+        }
 
-    /* The typing effect */
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-    @keyframes typing-p1 {
-        from { width: 0 }
-        to { width: 100% }
-    }
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
 
-    @keyframes typing-p2 {
-        from { width: 0 }
-        to { width: 100% }
-    }
+        @keyframes typing-p1 {
+            from { width: 0 }
+            to { width: 100% }
+        }
 
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: orange }
-    }
+        @keyframes typing-p2 {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+        }
 
         /* Nav bar slide */
         @keyframes slideDown {
@@ -194,7 +202,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">
-            <img src="img/fav.png" alt="Your Logo">
+            <img src="img/fav.png" alt=" Logo">
             <span>Comsafeti</span>
         </a>
 
@@ -226,7 +234,7 @@
             <!-- Typewriter Welcome Message -->
             <div class="welcome-message">
                 <h4 class="typewriter">Welcome to <span class="dynamic-word">community safety</span>!</h4>
-                <p class="typewriter-p1">We are dedicated to promoting community safety and security. Our platform allows you to report any crime or suspicious activity that you witness in your area. Together, we can create a safer environment for everyone.</p>
+                <strong><p class="typewriter-p1">We are dedicated to promoting community safety and security. Our platform allows you to report any crime or suspicious activity that you witness in your area. Together, we can create a safer environment for everyone.</p></strong>
                 <p class="typewriter-p2">Get involved today by registering as a civilian or a police officer below.</p>
             </div>
             <div class="registration-cards">
@@ -255,20 +263,22 @@
         const dynamicWord = document.querySelector('.dynamic-word');
         const words = ['ComSafeti', 'security', 'crime prevention'];
         let index = 0;
-    
+
         function changeWord() {
             dynamicWord.textContent = words[index];
             index = (index + 1) % words.length;
         }
-    
+
         setInterval(changeWord, 1500);
-    
-        // Navigation toggle functionality
-        const toggleButton = document.querySelector('.toggle-button');
-        const navLinks = document.querySelector('.nav-links');
-    
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+
+        // Add transition effects
+        const typewriterElements = document.querySelectorAll('.typewriter, .typewriter-p1, .typewriter-p2');
+        typewriterElements.forEach(element => {
+            element.addEventListener('animationend', () => {
+                element.classList.remove('typewriter', 'typewriter-p1', 'typewriter-p2');
+                element.style.borderRight = 'none'; // Remove typewriter cursor
+                element.classList.add('fade-in'); // Fade in the text after typing effect
+            });
         });
     </script>
 </body>
