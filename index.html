@@ -1,285 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comsafeti</title>
-    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="bootstrap.min.css" />
     <style>
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            
-        }
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* Container styles */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      /* Container styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        /* Navbar styles */
-        .navbar {
-            background-color: #333;
-            color: #fff;
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            animation: slideDown 1s ease-out; 
-        }
+      /* Navbar styles */
+      .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        animation: slideDown 1s ease-out;
+      }
 
-        .navbar-brand img {
-            height: 50px;
-            width: 50px;
-            margin-right: 10px;
-        }
+      .navbar-brand img {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+      }
 
-        .navbar-brand span {
-            font-size: 1.5rem;
-        }
+      .navbar-brand span {
+        font-size: 1.5rem;
+      }
 
-        .navbar-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
+      .navbar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
 
-        .navbar-nav li {
-            margin-right: 20px;
-        }
+      .navbar-nav li {
+        margin-right: 20px;
+      }
 
-        .navbar-nav li a {
-            color: #fff;
-            text-decoration: none;
-        }
+      .navbar-nav li a {
+        color: #fff;
+        text-decoration: none;
+      }
 
-        /* Hero Section styles */
-        .hero {
-            background-image: url('img/black\ community.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 100px 0;
-            /* height: 100vh; */
+      /* Hero Section styles */
+      .hero {
+        background-image: url("img/black\ community.jpeg");
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 100px 0;
+        /* height: 100vh; */
+      }
 
-        }
+      .welcome-message {
+        margin-bottom: 40px;
+        background-color: #007bff7e;
+        padding: 20px;
+        border-radius: 5px;
+      }
 
-        .welcome-message {
-            margin-bottom: 40px;
-            background-color: #007bff7e; 
-            padding: 20px;
-            border-radius: 5px;
-        }
+      .registration-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
 
-        .registration-cards {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap; 
-        }
+      .card {
+        background-color: #007bff46;
+        color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        text-align: center;
+        width: calc(100% - 20px);
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+      }
 
+      @media (min-width: 576px) {
         .card {
-            background-color: #007bff46;
-            color: #fff;
-            padding: 30px;
-            border-radius: 5px;
-            text-align: center;
-            width: calc(100% - 20px); 
-            margin-bottom: 20px; 
-            box-sizing: border-box;
-            transition: transform 0.3s ease-in-out;
+          width: calc(50% - 20px);
+        }
+      }
+
+      @media (min-width: 768px) {
+        /* Adjust based on your desired breakpoint */
+        .card {
+          width: calc(33.33% - 20px);
+        }
+      }
+
+      .card:hover {
+        transform: scale(1.1);
+        background-color: #007bff;
+      }
+
+      .card h5 {
+        margin-top: 0;
+      }
+
+      .card p {
+        margin-bottom: 15px;
+      }
+
+      .card .btn {
+        background-color: #fff;
+        color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .card .btn:hover {
+        background-color: #f0f0f0;
+      }
+
+      .typewriter,
+      .typewriter-p1,
+      .typewriter-p2 {
+        overflow: hidden;
+        border-right: 0.15em solid #000; /* Cursor effect */
+        white-space: nowrap; /* Keeps content in a single line */
+        margin: 0 auto; /* Center the element */
+        letter-spacing: 0.15em; /* Adds space between letters */
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      /* Customize the speed and style of each element's typing effect */
+      .typewriter {
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      .typewriter-p1 {
+        white-space: normal; /* Allow text to wrap */
+        overflow: visible; /* Allow overflowing text to be seen */
+        display: inline-block; /* Allows block-level styling while maintaining inline properties */
+        animation: typing-p1 7s steps(80, end),
+          blink-caret 0.75s step-end infinite;
+        width: 100%; /* Ensures the text wraps within its container */
+        max-width: 100%;
+        word-break: break-word; /* Allows breaking of words to avoid overflow */
+      }
+
+      .typewriter-p2 {
+        animation: typing 6.5s steps(60, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes typing-p1 {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: black;
+        }
+      }
+
+      /* Nav bar slide */
+      @keyframes slideDown {
+        0% {
+          transform: translateY(-100%);
         }
 
-
-        @media (min-width: 576px) { 
-            .card {
-                width: calc(50% - 20px); 
-            }
+        100% {
+          transform: translateY(0);
         }
-
-        @media (min-width: 768px) { /* Adjust based on your desired breakpoint */
-            .card {
-                width: calc(33.33% - 20px);
-            }
-        }
-
-
-        .card:hover {
-            transform: scale(1.1);
-            background-color: #007bff;
-        }
-
-        .card h5 {
-            margin-top: 0;
-        }
-
-        .card p {
-            margin-bottom: 15px;
-        }
-
-        .card .btn {
-            background-color: #fff;
-            color: #007bff;
-            border: none;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .card .btn:hover {
-            background-color: #f0f0f0;
-        }
-
-        .typewriter, .typewriter-p1, .typewriter-p2 {
-            overflow: hidden;
-            border-right: .15em solid orange; /* The typewriter cursor */
-            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-            letter-spacing: .15em; /* Adjust as needed */
-            opacity: 0; /* Initially hidden */
-        }
-
-        .typewriter {
-            animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
-            animation-delay: 1.5s; /* Delay for the typewriter effect */
-        }
-
-        .typewriter-p1 {
-            animation: typing-p1 4s steps(30, end);
-            animation-delay: 3s; /* Delay for the first paragraph */
-        }
-
-        .typewriter-p2 {
-            animation: typing-p2 3s steps(30, end) 7s; /* Delay for the second paragraph */
-        }
-
-        .fade-in {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        /* The typing effect */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes typing-p1 {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes typing-p2 {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange }
-        }
-
-        /* Nav bar slide */
-        @keyframes slideDown {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(0); }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/fav.png" alt=" Logo">
-            <span>Comsafeti</span>
-        </a>
+      <a class="navbar-brand" href="index.html">
+        <img src="img/fav.png" alt=" Logo" />
+        <span>Comsafeti</span>
+      </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="CivilanLogin.html">Civilan Sign In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="LawEnforcementLogin.html">LawEnforcement Sign In</a>
-                </li>
-            </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CivilanLogin.html">Civilan Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="LawEnforcementLogin.html"
+              >LawEnforcement Sign In</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <div class="hero">
-        <div class="container">
-            <!-- Typewriter Welcome Message -->
-            <div class="welcome-message">
-                <h4 class="typewriter">Welcome to <span class="dynamic-word">community safety</span>!</h4>
-                <strong><p class="typewriter-p1">We are dedicated to promoting community safety and security. Our platform allows you to report any crime or suspicious activity that you witness in your area. Together, we can create a safer environment for everyone.</p></strong>
-                <p class="typewriter-p2">Get involved today by registering as a civilian or a police officer below.</p>
-            </div>
-            <div class="registration-cards">
-                <!-- Your registration cards -->
-                <div class="card">
-                    <h5>Register as a Civilian</h5>
-                    <p>Register as a civilian to report crime scenes.</p>
-                    <a href="CivilanRegistration.html" class="btn">Register</a>
-                </div>
-                <div class="card">
-                    <h5>Register as a Law Enforcement Agent</h5>
-                    <p>Register as a Law Enforcement Agent to access additional features.</p>
-                    <a href="LawEnforcementSignUp.html" class="btn">Register</a>
-                </div>
-                <div class="card">
-                    <h5>Anonymous Reporting</h5>
-                    <p>Register without having to reveal your true identity.</p>
-                    <a href="#" class="btn">Register</a>
-                </div>
-            </div>
+      <div class="container">
+        <!-- Typewriter Welcome Message -->
+        <div class="welcome-message">
+          <h4 class="typewriter">
+            Welcome to <span class="dynamic-word">community safety</span>!
+          </h4>
+          <strong>
+            <p class="typewriter-p1">
+              We are dedicated to promoting community safety and security. Our
+              platform allows you to report any crime or suspicious activity
+              that you witness in your area. Together, we can create a safer
+              environment for everyone.
+            </p>
+          </strong>
+          <p class="typewriter-p2">
+            Get involved today by registering as a civilian or a police officer
+            below.
+          </p>
         </div>
+        <div class="registration-cards">
+          <!-- Your registration cards -->
+          <div class="card">
+            <h5>Register as a Civilian</h5>
+            <p>Register as a civilian to report crime scenes.</p>
+            <a href="CivilanRegistration.html" class="btn">Register</a>
+          </div>
+          <div class="card">
+            <h5>Register as a Law Enforcement Agent</h5>
+            <p>
+              Register as a Law Enforcement Agent to access additional features.
+            </p>
+            <a href="LawEnforcementSignUp.html" class="btn">Register</a>
+          </div>
+          <div class="card">
+            <h5>Anonymous Reporting</h5>
+            <p>Register without having to reveal your true identity.</p>
+            <a href="#" class="btn">Register</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-        // Dynamic word changing
-        const dynamicWord = document.querySelector('.dynamic-word');
-        const words = ['ComSafeti', 'security', 'crime prevention'];
-        let index = 0;
+      // Dynamic word changing
+      const dynamicWord = document.querySelector(".dynamic-word");
+      const words = ["ComSafeti", "security", "crime prevention"];
+      let index = 0;
 
-        function changeWord() {
-            dynamicWord.textContent = words[index];
-            index = (index + 1) % words.length;
-        }
+      function changeWord() {
+        dynamicWord.textContent = words[index];
+        index = (index + 1) % words.length;
+      }
 
-        setInterval(changeWord, 1500);
+      setInterval(changeWord, 1500);
 
-        // Add transition effects
-        const typewriterElements = document.querySelectorAll('.typewriter, .typewriter-p1, .typewriter-p2');
-        typewriterElements.forEach(element => {
-            element.addEventListener('animationend', () => {
-                element.classList.remove('typewriter', 'typewriter-p1', 'typewriter-p2');
-                element.style.borderRight = 'none'; // Remove typewriter cursor
-                element.classList.add('fade-in'); // Fade in the text after typing effect
-            });
+      // Add transition effects
+      document.addEventListener("DOMContentLoaded", function () {
+        const typewriterElements = document.querySelectorAll(
+          ".typewriter, .typewriter-p1, .typewriter-p2"
+        );
+        let delay = 0;
+
+        typewriterElements.forEach((element) => {
+          element.style.visibility = "hidden";
+          setTimeout(() => {
+            element.style.visibility = "visible";
+          }, delay);
+          delay += 3000; // Adjust timing for each element
         });
+      });
     </script>
-</body>
+  </body>
 </html>
